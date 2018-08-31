@@ -21,9 +21,9 @@ dev_dependencies:
 flutter_icons:
     android: true
     ios: true
-    image_path: 'assets/icon/icon.png'
+    image_path: 'assets/icon/cross.png'
     adaptive_icon_background: '#FFFAFAFA'
-    adaptive_icon_foreground: 'assets/icon/icon.png'
+    adaptive_icon_foreground: 'assets/icon/cross.png'
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
