@@ -11,6 +11,7 @@ class SongsModel extends Model {
 
   Song _selectedSong;
 
+  bool newUser = false;
   bool _isNightMode = false;
   double _fontSize = 15.0;
 
@@ -182,13 +183,6 @@ class SongsModel extends Model {
     prefs.setBool('nightMode', _isNightMode);
   }
 
-  void setMode() async {
-    final prefs = await SharedPreferences.getInstance();
-    if (prefs.getBool('nightMode') != null) {
-      _isNightMode = prefs.getBool('nightMode');
-    }
-  }
-
   void changeFontSize(bool mode) async {
     if (mode && _fontSize < 20) {
       _fontSize += 1.0;
@@ -200,8 +194,22 @@ class SongsModel extends Model {
     prefs.setDouble('fontsize', _fontSize);
   }
 
-  void getFontSize() async {
+  void makeOldUser() async {
     final prefs = await SharedPreferences.getInstance();
+    newUser = false;
+    notifyListeners();
+    prefs.setBool('newUser', false);
+  }
+
+  void setSharedPreferences() async {
+    final prefs = await SharedPreferences.getInstance();
+    if (prefs.getBool('newUser') == null || prefs.getBool('newUser')) {
+      newUser = true;
+      prefs.setBool('newUser', true);
+    }
+    if (prefs.getBool('nightMode') != null) {
+      _isNightMode = prefs.getBool('nightMode');
+    }
     if (prefs.getDouble('fontsize') != null) {
       _fontSize = prefs.getDouble('fontsize');
     }
@@ -258,7 +266,6 @@ class SongsModel extends Model {
       paamalais.sort((a, b) => a.orderNumber.compareTo(b.orderNumber));
       notifyListeners();
     });
-    setMode();
-    getFontSize();
+    setSharedPreferences();
   }
 }

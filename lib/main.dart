@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
               brightness:
                   model.isNightMode ? Brightness.dark : Brightness.light,
             ),
-            home: new MyHomePage(),
+            home: new MyHomePage(model.newUser, model.makeOldUser, context),
             routes: {
               '/bible': (_) => MaintenancePage('Bible'),
               '/oos': (_) => MaintenancePage('Order of Service'),

@@ -12,7 +12,10 @@ class MaintenancePage extends StatelessWidget {
         title: Text(title),
       ),
       body: Center(
-        child: Text('Coming Soon'),
+        child: Image(
+          image: AssetImage('assets/images/UC.png'),
+          height: 150.0,
+        ),
       ),
     );
   }

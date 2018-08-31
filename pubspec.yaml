@@ -12,6 +12,7 @@ dependencies:
     shared_preferences: ^0.4.2
     share: ^0.5.3
     flutter_webview_plugin: ^0.2.1+2
+    launch_review: ^1.0.1
 
 dev_dependencies:
     flutter_test:
@@ -40,6 +41,7 @@ flutter:
         - assets/data/hymns.json
         - assets/data/keerthanai.json
         - assets/data/paamalai.json
+        - assets/images/UC.png
     #  - images/a_dot_burr.jpeg
     #  - images/a_dot_ham.jpeg
     # An image asset can refer to one or more resolution-specific "variants", see
