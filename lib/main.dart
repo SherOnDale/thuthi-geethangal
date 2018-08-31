@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
               '/oos': (_) => MaintenancePage('Order of Service'),
               '/about': (_) => AboutPage(),
               '/feedback': (_) => new WebviewScaffold(
-                    url: 'https://goo.gl/forms/uzNHwEr9DqudLFxx2',
+                    url: 'http://goo.gl/forms/31EMLIoZmjMqQFqo1',
                     appBar: new AppBar(title: Text('Feedback')),
                   )
             },
