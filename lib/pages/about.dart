@@ -4,28 +4,26 @@ class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Scaffold(
-        appBar: AppBar(),
-        body: Container(
-          padding: EdgeInsets.all(10.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              DefaultTextStyle(
-                style: Theme.of(context).textTheme.title,
-                child: AckWidget(),
-              ),
-              DefaultTextStyle(
-                style: Theme.of(context).textTheme.title,
-                child: AbtWidget(),
-              ),
-              DefaultTextStyle(
-                style: Theme.of(context).textTheme.title,
-                child: CrdWidget(),
-              ),
-            ],
-          ),
+      appBar: AppBar(),
+      body: Container(
+        padding: EdgeInsets.all(10.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            DefaultTextStyle(
+              style: Theme.of(context).textTheme.title,
+              child: AckWidget(),
+            ),
+            DefaultTextStyle(
+              style: Theme.of(context).textTheme.title,
+              child: AbtWidget(),
+            ),
+            DefaultTextStyle(
+              style: Theme.of(context).textTheme.title,
+              child: CrdWidget(),
+            ),
+          ],
         ),
       ),
     );

@@ -9,74 +9,18 @@ import '../widgets/fab.dart';
 import '../scoped_models/songs.dart';
 
 class MyHomePage extends StatefulWidget {
-  final bool newUser;
-  final Function makeOldUser;
-  final BuildContext context;
-
   @override
   State<StatefulWidget> createState() {
     return MyHomePageState();
   }
 
-  MyHomePage(this.newUser, this.makeOldUser, this.context, {Key key})
-      : super(key: key);
+  MyHomePage({Key key}) : super(key: key);
 }
 
 class MyHomePageState extends State<MyHomePage> {
   Widget appBarTitle = Text('Thuthi Geethangal');
   Icon actionIcon = Icon(Icons.search);
   TextEditingController _searchQuery = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-    if (widget.newUser) {
-      WidgetsBinding.instance.addPostFrameCallback((_) async {
-        await showDialog(
-            context: context,
-            builder: (BuildContext context) => new AlertDialog(
-                  title: Text('Welcome to Thuthi Geethangal'),
-                  content: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        'Praise be to god',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20.0,
-                      ),
-                      Text(
-                        'Thank you for giving this App a shot . It was not easy getting here but we made it 👍🏼 and have a long way to go . Kindly use the Feedback form 📨 to contact us and to notify us if there is any error 👾with the app or content missing 🤖 . Do rate our app in play store . Continue to encourage us for there are goodies yet to come . ciao 😍',
-                        textAlign: TextAlign.center,
-                      )
-                    ],
-                  ),
-                  actions: <Widget>[
-                    FlatButton(
-                      child: Text('Take me there!'),
-                      onPressed: () {
-                        widget.makeOldUser();
-                        LaunchReview.launch(
-                            androidAppId: 'com.cadoapps.telchymns');
-                      },
-                    ),
-                    FlatButton(
-                      child: Text('No Thanks'),
-                      onPressed: () {
-                        widget.makeOldUser();
-                        Navigator.of(context).pop();
-                      },
-                    )
-                  ],
-                ));
-      });
-    }
-  }
 
   Future<bool> _onWillPop() {
     return showDialog(
@@ -165,7 +109,22 @@ class MyHomePageState extends State<MyHomePage> {
                   DrawerHeader(
                     decoration:
                         BoxDecoration(color: Theme.of(context).primaryColor),
-                    child: SizedBox(),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'THUTHI',
+                          style:
+                              TextStyle(fontFamily: 'Alpaca', fontSize: 25.0),
+                        ),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        Text('GEETHANGAL',
+                            style:
+                                TextStyle(fontFamily: 'Alpaca', fontSize: 25.0))
+                      ],
+                    ),
                   ),
                   ListTile(
                     title: Text('Songs'),
@@ -187,7 +146,24 @@ class MyHomePageState extends State<MyHomePage> {
                       Navigator.pushNamed(context, '/oos');
                     },
                   ),
-                  Divider(),
+                  SizedBox(
+                    height: 10.0,
+                    child: new Center(
+                      child: new Container(
+                        margin: new EdgeInsetsDirectional.only(
+                            start: 1.0, end: 1.0),
+                        height: 1.5,
+                        color: Theme.of(context).dividerColor,
+                      ),
+                    ),
+                  ),
+                  ListTile(
+                    title: Text('About Us'),
+                    onTap: () {
+                      Navigator.pop(context);
+                      Navigator.pushNamed(context, '/about');
+                    },
+                  ),
                   ListTile(
                     title: Text('Feedback'),
                     onTap: () {
@@ -196,10 +172,10 @@ class MyHomePageState extends State<MyHomePage> {
                     },
                   ),
                   ListTile(
-                    title: Text('About Us'),
+                    title: Text('Rate Us'),
                     onTap: () {
-                      Navigator.pop(context);
-                      Navigator.pushNamed(context, '/about');
+                      LaunchReview.launch(
+                          androidAppId: 'com.cadoapps.telchymns');
                     },
                   )
                 ],

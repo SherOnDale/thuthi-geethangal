@@ -30,8 +30,8 @@ android {
         applicationId "com.cadoapps.telchymns"
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode 33
-        versionName "0.8.4"
+        versionCode 40
+        versionName "1.0.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 

@@ -205,6 +205,7 @@ class SongsModel extends Model {
     final prefs = await SharedPreferences.getInstance();
     if (prefs.getBool('newUser') == null || prefs.getBool('newUser')) {
       newUser = true;
+      notifyListeners();
       prefs.setBool('newUser', true);
     }
     if (prefs.getBool('nightMode') != null) {

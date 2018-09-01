@@ -8,6 +8,7 @@ import './pages/home.dart';
 import './pages/song.dart';
 import './pages/about.dart';
 import './pages/maintenance.dart';
+import './pages/welcome.dart';
 
 void main() => runApp(new MyApp());
 
@@ -38,8 +39,15 @@ class MyApp extends StatelessWidget {
               brightness:
                   model.isNightMode ? Brightness.dark : Brightness.light,
             ),
-            home: new MyHomePage(model.newUser, model.makeOldUser, context),
+            // home: new MyHomePage(model.newUser),
             routes: {
+              '/': (_) {
+                if (model.newUser) {
+                  return WelcomePage();
+                } else {
+                  return MyHomePage();
+                }
+              },
               '/bible': (_) => MaintenancePage('Bible'),
               '/oos': (_) => MaintenancePage('Order of Service'),
               '/about': (_) => AboutPage(),
@@ -58,6 +66,7 @@ class MyApp extends StatelessWidget {
                       SongPage(int.parse(pathElements[2]), pathElements[1]),
                 );
               }
+              return null;
             },
           );
         },

@@ -98,7 +98,7 @@ class _FabState extends State<Fab> with SingleTickerProviderStateMixin {
           model.changeFontSize(false);
         },
         tooltip: 'Decrease Font Size',
-        child: Icon(Icons.minimize),
+        child: Icon(Icons.remove),
       ),
     );
   }
