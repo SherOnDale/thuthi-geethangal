@@ -1,8 +1,8 @@
 import 'package:scoped_model/scoped_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../models/song.dart';
-import '../data/songs_parser.dart';
+import 'package:telc_hymns/models/song.dart';
+import 'package:telc_hymns/data/songs_parser.dart';
 
 class SongsModel extends Model {
   List<Song> hymns = [];

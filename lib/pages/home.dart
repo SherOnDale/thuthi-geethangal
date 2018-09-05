@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:launch_review/launch_review.dart';
 
-import '../widgets/songs_list.dart';
-import '../widgets/fab.dart';
-import '../scoped_models/songs.dart';
+import 'package:telc_hymns/widgets/songs_list.dart';
+import 'package:telc_hymns/widgets/fab.dart';
+import 'package:telc_hymns/scoped_models/songs.dart';
 
 class MyHomePage extends StatefulWidget {
   @override

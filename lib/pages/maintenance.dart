@@ -13,6 +13,7 @@ class MaintenancePage extends StatelessWidget {
       ),
       body: Center(
         child: Image(
+          semanticLabel: 'Under Construction',
           image: AssetImage('assets/images/UC.png'),
           height: 150.0,
         ),

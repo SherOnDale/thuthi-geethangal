@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:launch_review/launch_review.dart';
 import 'package:scoped_model/scoped_model.dart';
 
-import '../scoped_models/songs.dart';
+import 'package:telc_hymns/scoped_models/songs.dart';
 
 class WelcomePage extends StatelessWidget {
   @override

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:share/share.dart';
 
-import '../scoped_models/songs.dart';
-import '../widgets/fab.dart';
+import 'package:telc_hymns/scoped_models/songs.dart';
+import 'package:telc_hymns/widgets/fab.dart';
 
 class SongPage extends StatelessWidget {
   final int index;

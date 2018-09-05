@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
-import '../scoped_models/songs.dart';
-import '../models/song.dart';
+import 'package:telc_hymns/scoped_models/songs.dart';
+import 'package:telc_hymns/models/song.dart';
 
 class SongsList extends StatelessWidget {
   final List<Song> songs;

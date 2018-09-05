@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
-import './models/song.dart';
-import './scoped_models/songs.dart';
-import './pages/home.dart';
-import './pages/song.dart';
-import './pages/about.dart';
-import './pages/maintenance.dart';
-import './pages/welcome.dart';
+import 'package:telc_hymns/models/song.dart';
+import 'package:telc_hymns/scoped_models/songs.dart';
+import 'package:telc_hymns/pages/home.dart';
+import 'package:telc_hymns/pages/song.dart';
+import 'package:telc_hymns/pages/about.dart';
+import 'package:telc_hymns/pages/maintenance.dart';
+import 'package:telc_hymns/pages/welcome.dart';
 
 void main() => runApp(new MyApp());
 

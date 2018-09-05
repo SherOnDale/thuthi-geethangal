@@ -2,7 +2,7 @@ import 'dart:async' show Future;
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 
-import '../models/song.dart';
+import 'package:telc_hymns/models/song.dart';
 
 Future<String> _loadHymnsAsset() async {
   return await rootBundle.loadString('assets/data/hymns.json');
