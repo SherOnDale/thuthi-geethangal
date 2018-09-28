@@ -21,6 +21,7 @@ class MyHomePageState extends State<MyHomePage> {
   Widget appBarTitle = Text('Thuthi Geethangal');
   Icon actionIcon = Icon(Icons.search);
   TextEditingController _searchQuery = TextEditingController();
+  ScrollController scrollController = ScrollController();
 
   Future<bool> _onWillPop() {
     return showDialog(
@@ -183,9 +184,9 @@ class MyHomePageState extends State<MyHomePage> {
             ),
             body: TabBarView(
               children: <Widget>[
-                SongsList(model.allHymns, 'hymn'),
-                SongsList(model.allKeerthanais, 'keerthanai'),
-                SongsList(model.allPaamalais, 'paamalai'),
+                SongsList(model.allHymns, 'hymn', scrollController),
+                SongsList(model.allKeerthanais, 'keerthanai', scrollController),
+                SongsList(model.allPaamalais, 'paamalai', scrollController),
               ],
             ),
             floatingActionButton: Fab(),

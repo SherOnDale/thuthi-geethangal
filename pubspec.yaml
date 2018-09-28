@@ -13,6 +13,7 @@ dependencies:
     share: ^0.5.3
     flutter_webview_plugin: ^0.2.1+2
     launch_review: ^1.0.1
+    draggable_scrollbar: ^0.0.4
 
 dev_dependencies:
     flutter_test:
